@@ -1,0 +1,21 @@
+{
+  "name": "itcenter/bel-trans-sat-soap",
+  "description": "BelTransSat SOAP by IT-CENTER",
+  "type": "library",
+  "license": "Apache",
+  "autoload": {
+    "psr-4": {
+      "ItCenter\\BelTransSat\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "7-zete-7",
+      "email": "7zete7@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "ext-soap": "*"
+  }
+}
