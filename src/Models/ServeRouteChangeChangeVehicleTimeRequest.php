@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ServeRouteChangeChangeVehicleTimeRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routeChangeChangeVehicleTimeRequestJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\RouteChangeChangeVehicleTimeRequestJaxb
+     * @var \Zete7\BelTransSat\Models\RouteChangeChangeVehicleTimeRequestJaxb
      */
     public $request = null;
 }

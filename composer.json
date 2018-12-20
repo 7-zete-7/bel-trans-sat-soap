@@ -1,11 +1,11 @@
 {
-  "name": "itcenter/bel-trans-sat-soap",
-  "description": "BelTransSat SOAP by IT-CENTER",
+  "name": "zete7/bel-trans-sat-soap",
+  "description": "BelTransSat SOAP API",
   "type": "library",
   "license": "Apache",
   "autoload": {
     "psr-4": {
-      "ItCenter\\BelTransSat\\": "src/"
+      "Zete7\\BelTransSat\\": "src/"
     }
   },
   "authors": [
@@ -17,5 +17,11 @@
   "require": {
     "php": ">=5.3.0",
     "ext-soap": "*"
-  }
+  },
+  "repositories": [
+    {
+      "type": "github",
+      "url": "https://github.com/7-zete-7/bel-trans-sat-soap"
+    }
+  ]
 }

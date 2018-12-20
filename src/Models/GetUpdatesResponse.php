@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class GetUpdatesResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:dataUpdates
      *
-     * @var \ItCenter\BelTransSat\Models\DataUpdatesModel
+     * @var \Zete7\BelTransSat\Models\DataUpdatesModel
      */
     public $return = null;
 }

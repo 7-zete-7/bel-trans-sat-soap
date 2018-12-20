@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class GetCurrentPointsResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:customerDataJaxb
      *
-     * @var array(\ItCenter\BelTransSat\Models\customerDataJaxb)
+     * @var array(\Zete7\BelTransSat\Models\customerDataJaxb)
      */
     public $point = null;
 }

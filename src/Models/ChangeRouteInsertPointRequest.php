@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ChangeRouteInsertPointRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routeChangeInsertPointRequestJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\RouteChangeInsertPointRequestJaxb
+     * @var \Zete7\BelTransSat\Models\RouteChangeInsertPointRequestJaxb
      */
     public $request = null;
 }

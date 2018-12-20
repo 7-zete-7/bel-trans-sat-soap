@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class GetPointStatusResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:pointStatus
      *
-     * @var \ItCenter\BelTransSat\Models\PointStatus
+     * @var \Zete7\BelTransSat\Models\PointStatus
      */
     public $return = null;
 }

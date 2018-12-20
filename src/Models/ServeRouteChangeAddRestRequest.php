@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ServeRouteChangeAddRestRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routeChangeAddRestRequestJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\RouteChangeAddRestRequestJaxb
+     * @var \Zete7\BelTransSat\Models\RouteChangeAddRestRequestJaxb
      */
     public $request = null;
 }

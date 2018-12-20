@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ServeRouteChangeRemovePointRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routeChangeRemovePointRequestJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\RouteChangeRemovePointRequestJaxb
+     * @var \Zete7\BelTransSat\Models\RouteChangeRemovePointRequestJaxb
      */
     public $request = null;
 }

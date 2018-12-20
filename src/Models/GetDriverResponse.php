@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class GetDriverResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:driverJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\DriverModel
+     * @var \Zete7\BelTransSat\Models\DriverModel
      */
     public $driver;
 }

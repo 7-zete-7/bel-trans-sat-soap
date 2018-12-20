@@ -1,14 +1,14 @@
 <?php
 
-namespace ItCenter\BelTransSat;
+namespace Zete7\BelTransSat;
 
 use SoapClient as BaseSoapClient;
-use ItCenter\BelTransSat\Models\DriverModel;
-use ItCenter\BelTransSat\Models\AddDriverRequest;
-use ItCenter\BelTransSat\Models\DeleteDriverRequest;
-use ItCenter\BelTransSat\Models\GetDriverRequest;
-use ItCenter\BelTransSat\Models\GetDriversIdsRequest;
-use ItCenter\BelTransSat\Models\UpdateDriverRequest;
+use Zete7\BelTransSat\Models\DriverModel;
+use Zete7\BelTransSat\Models\AddDriverRequest;
+use Zete7\BelTransSat\Models\DeleteDriverRequest;
+use Zete7\BelTransSat\Models\GetDriverRequest;
+use Zete7\BelTransSat\Models\GetDriversIdsRequest;
+use Zete7\BelTransSat\Models\UpdateDriverRequest;
 
 /**
  * This class is generated from the following WSDL:
@@ -17,17 +17,17 @@ use ItCenter\BelTransSat\Models\UpdateDriverRequest;
 class Drivers extends BaseSoapClient
 {
     protected $classMap = array(
-        'addDriver' => '\\ItCenter\\BelTransSat\\Models\\AddDriverRequest',
-        'addDriverResponse' => '\\ItCenter\\BelTransSat\\Models\\AddDriverResponse',
-        'deleteDriver' => '\\ItCenter\\BelTransSat\\Models\\DeleteDriverRequest',
-        'deleteDriverResponse' => '\\ItCenter\\BelTransSat\\Models\\DeleteDriverResponse',
-        'getDriver' => '\\ItCenter\\BelTransSat\\Models\\GetDriverRequest',
-        'getDriverResponse' => '\\ItCenter\\BelTransSat\\Models\\GetDriverResponse',
-        'getDriversIds' => '\\ItCenter\\BelTransSat\\Models\\GetDriversIdsRequest',
-        'getDriversIdsResponse' => '\\ItCenter\\BelTransSat\\Models\\GetDriversIdsResponse',
-        'updateDriver' => '\\ItCenter\\BelTransSat\\Models\\UpdateDriverRequest',
-        'updateDriverResponse' => '\\ItCenter\\BelTransSat\\Models\\UpdateDriverResponse',
-        'driverJaxb' => '\\ItCenter\\BelTransSat\\Models\\DriverModel',
+        'addDriver' => '\\Zete7\\BelTransSat\\Models\\AddDriverRequest',
+        'addDriverResponse' => '\\Zete7\\BelTransSat\\Models\\AddDriverResponse',
+        'deleteDriver' => '\\Zete7\\BelTransSat\\Models\\DeleteDriverRequest',
+        'deleteDriverResponse' => '\\Zete7\\BelTransSat\\Models\\DeleteDriverResponse',
+        'getDriver' => '\\Zete7\\BelTransSat\\Models\\GetDriverRequest',
+        'getDriverResponse' => '\\Zete7\\BelTransSat\\Models\\GetDriverResponse',
+        'getDriversIds' => '\\Zete7\\BelTransSat\\Models\\GetDriversIdsRequest',
+        'getDriversIdsResponse' => '\\Zete7\\BelTransSat\\Models\\GetDriversIdsResponse',
+        'updateDriver' => '\\Zete7\\BelTransSat\\Models\\UpdateDriverRequest',
+        'updateDriverResponse' => '\\Zete7\\BelTransSat\\Models\\UpdateDriverResponse',
+        'driverJaxb' => '\\Zete7\\BelTransSat\\Models\\DriverModel',
     );
 
     /**
@@ -55,9 +55,9 @@ class Drivers extends BaseSoapClient
      *
      * @api
      *
-     * @param \ItCenter\BelTransSat\Models\DriverModel $driver
+     * @param \Zete7\BelTransSat\Models\DriverModel $driver
      *
-     * @return \ItCenter\BelTransSat\Models\AddDriverResponse
+     * @return \Zete7\BelTransSat\Models\AddDriverResponse
      */
     public function addDriver(DriverModel $driver)
     {
@@ -72,9 +72,9 @@ class Drivers extends BaseSoapClient
      *
      * @api
      *
-     * @param \ItCenter\BelTransSat\Models\DriverModel $driver
+     * @param \Zete7\BelTransSat\Models\DriverModel $driver
      *
-     * @return \ItCenter\BelTransSat\Models\UpdateDriverResponse
+     * @return \Zete7\BelTransSat\Models\UpdateDriverResponse
      */
     public function updateDriver(DriverModel $driver)
     {
@@ -91,7 +91,7 @@ class Drivers extends BaseSoapClient
      *
      * @param string $driverId
      *
-     * @return \ItCenter\BelTransSat\Models\DeleteDriverResponse
+     * @return \Zete7\BelTransSat\Models\DeleteDriverResponse
      */
     public function deleteDriver($driverId)
     {
@@ -106,7 +106,7 @@ class Drivers extends BaseSoapClient
      *
      * @api
      *
-     * @return \ItCenter\BelTransSat\Models\GetDriversIdsResponse
+     * @return \Zete7\BelTransSat\Models\GetDriversIdsResponse
      */
     public function getDriversIds()
     {
@@ -122,7 +122,7 @@ class Drivers extends BaseSoapClient
      *
      * @param string $driverId
      *
-     * @return \ItCenter\BelTransSat\Models\GetDriverResponse
+     * @return \Zete7\BelTransSat\Models\GetDriverResponse
      */
     public function getDriver($driverId)
     {

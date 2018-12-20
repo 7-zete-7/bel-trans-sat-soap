@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ServeRouteChangeEditPointPositionRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routeChangeEditPointPositionRequestJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\RouteChangeEditPointPositionRequestJaxb
+     * @var \Zete7\BelTransSat\Models\RouteChangeEditPointPositionRequestJaxb
      */
     public $request = null;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -83,7 +83,7 @@ class UpdatedPointData
      *
      * The property has the following characteristics/restrictions:
      *
-     * @var \ItCenter\BelTransSat\Models\CostWrapper[]
+     * @var \Zete7\BelTransSat\Models\CostModel[]
      */
     public $costs;
 
@@ -143,7 +143,7 @@ class UpdatedPointData
      * The property has the following characteristics/restrictions:
      * - SchemaType: xs:sequence of tns:good
      *
-     * @var \ItCenter\BelTransSat\Models\GoodWrapper[]
+     * @var \Zete7\BelTransSat\Models\GoodModel[]
      */
     public $goods;
 

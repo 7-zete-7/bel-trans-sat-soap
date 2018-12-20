@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ServeVrpRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:vrpRequestJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\VrpRequestJaxb
+     * @var \Zete7\BelTransSat\Models\VrpRequestJaxb
      */
     public $request = null;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class GetAllVehiclesResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:vehicleJaxb
      *
-     * @var array(\ItCenter\BelTransSat\Models\vehicleJaxb)
+     * @var array(\Zete7\BelTransSat\Models\vehicleJaxb)
      */
     public $return;
 }

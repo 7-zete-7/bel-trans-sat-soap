@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class UpdatePointRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:customerDataJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\CustomerDataModel
+     * @var \Zete7\BelTransSat\Models\CustomerDataModel
      */
     public $point = null;
 }

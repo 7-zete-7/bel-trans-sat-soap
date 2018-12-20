@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -13,7 +13,7 @@ class UpdatedPointDataWrapper
      *
      * The property has the following characteristics/restrictions:
      *
-     * @var \ItCenter\BelTransSat\Models\UpdatedPointData
+     * @var \Zete7\BelTransSat\Models\UpdatedPointData
      */
     public $point;
 }

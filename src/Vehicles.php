@@ -1,17 +1,17 @@
 <?php
 
-namespace ItCenter\BelTransSat;
+namespace Zete7\BelTransSat;
 
 use SoapClient as BaseSoapClient;
-use ItCenter\BelTransSat\Models\AddVehicleRequest;
-use ItCenter\BelTransSat\Models\DeleteVehicleRequest;
-use ItCenter\BelTransSat\Models\GetAllVehiclesRequest;
-use ItCenter\BelTransSat\Models\GetVehicleRequest;
-use ItCenter\BelTransSat\Models\GetVehiclesIdsRequest;
-use ItCenter\BelTransSat\Models\SetVehicleDriverRequest;
-use ItCenter\BelTransSat\Models\SetVehicleWorkTimeRequest;
-use ItCenter\BelTransSat\Models\SetVehicleZonesRequest;
-use ItCenter\BelTransSat\Models\UpdateVehicleRequest;
+use Zete7\BelTransSat\Models\AddVehicleRequest;
+use Zete7\BelTransSat\Models\DeleteVehicleRequest;
+use Zete7\BelTransSat\Models\GetAllVehiclesRequest;
+use Zete7\BelTransSat\Models\GetVehicleRequest;
+use Zete7\BelTransSat\Models\GetVehiclesIdsRequest;
+use Zete7\BelTransSat\Models\SetVehicleDriverRequest;
+use Zete7\BelTransSat\Models\SetVehicleWorkTimeRequest;
+use Zete7\BelTransSat\Models\SetVehicleZonesRequest;
+use Zete7\BelTransSat\Models\UpdateVehicleRequest;
 
 /**
  * This class is generated from the following WSDL:
@@ -20,25 +20,25 @@ use ItCenter\BelTransSat\Models\UpdateVehicleRequest;
 class Vehicles extends BaseSoapClient
 {
     protected $classMap = array(
-        'addVehicle' => 'ItCenter\\BelTransSat\\Models\\AddVehicleRequest',
-        'addVehicleResponse' => 'ItCenter\\BelTransSat\\Models\\AddVehicleResponse',
-        'deleteVehicle' => 'ItCenter\\BelTransSat\\Models\\DeleteVehicleRequest',
-        'deleteVehicleResponse' => 'ItCenter\\BelTransSat\\Models\\DeleteVehicleResponse',
-        'getAllVehicles' => 'ItCenter\\BelTransSat\\Models\\GetAllVehiclesRequest',
-        'getAllVehiclesResponse' => 'ItCenter\\BelTransSat\\Models\\GetAllVehiclesResponse',
-        'getVehicle' => 'ItCenter\\BelTransSat\\Models\\GetVehicleRequest',
-        'getVehicleResponse' => 'ItCenter\\BelTransSat\\Models\\GetVehicleResponse',
-        'getVehiclesIds' => 'ItCenter\\BelTransSat\\Models\\GetVehiclesIdsRequest',
-        'getVehiclesIdsResponse' => 'ItCenter\\BelTransSat\\Models\\GetVehiclesIdsResponse',
-        'setVehicleDriver' => 'ItCenter\\BelTransSat\\Models\\SetVehicleDriverRequest',
-        'setVehicleDriverResponse' => 'ItCenter\\BelTransSat\\Models\\SetVehicleDriverResponse',
-        'setVehicleWorkTime' => 'ItCenter\\BelTransSat\\Models\\SetVehicleWorkTimeRequest',
-        'setVehicleWorkTimeResponse' => 'ItCenter\\BelTransSat\\Models\\SetVehicleWorkTimeResponse',
-        'setVehicleZones' => 'ItCenter\\BelTransSat\\Models\\SetVehicleZonesRequest',
-        'setVehicleZonesResponse' => 'ItCenter\\BelTransSat\\Models\\SetVehicleZonesResponse',
-        'updateVehicle' => 'ItCenter\\BelTransSat\\Models\\UpdateVehicleRequest',
-        'updateVehicleResponse' => 'ItCenter\\BelTransSat\\Models\\UpdateVehicleResponse',
-        'vehicleJaxb' => 'ItCenter\\BelTransSat\\Models\\VehicleModel',
+        'addVehicle' => 'Zete7\\BelTransSat\\Models\\AddVehicleRequest',
+        'addVehicleResponse' => 'Zete7\\BelTransSat\\Models\\AddVehicleResponse',
+        'deleteVehicle' => 'Zete7\\BelTransSat\\Models\\DeleteVehicleRequest',
+        'deleteVehicleResponse' => 'Zete7\\BelTransSat\\Models\\DeleteVehicleResponse',
+        'getAllVehicles' => 'Zete7\\BelTransSat\\Models\\GetAllVehiclesRequest',
+        'getAllVehiclesResponse' => 'Zete7\\BelTransSat\\Models\\GetAllVehiclesResponse',
+        'getVehicle' => 'Zete7\\BelTransSat\\Models\\GetVehicleRequest',
+        'getVehicleResponse' => 'Zete7\\BelTransSat\\Models\\GetVehicleResponse',
+        'getVehiclesIds' => 'Zete7\\BelTransSat\\Models\\GetVehiclesIdsRequest',
+        'getVehiclesIdsResponse' => 'Zete7\\BelTransSat\\Models\\GetVehiclesIdsResponse',
+        'setVehicleDriver' => 'Zete7\\BelTransSat\\Models\\SetVehicleDriverRequest',
+        'setVehicleDriverResponse' => 'Zete7\\BelTransSat\\Models\\SetVehicleDriverResponse',
+        'setVehicleWorkTime' => 'Zete7\\BelTransSat\\Models\\SetVehicleWorkTimeRequest',
+        'setVehicleWorkTimeResponse' => 'Zete7\\BelTransSat\\Models\\SetVehicleWorkTimeResponse',
+        'setVehicleZones' => 'Zete7\\BelTransSat\\Models\\SetVehicleZonesRequest',
+        'setVehicleZonesResponse' => 'Zete7\\BelTransSat\\Models\\SetVehicleZonesResponse',
+        'updateVehicle' => 'Zete7\\BelTransSat\\Models\\UpdateVehicleRequest',
+        'updateVehicleResponse' => 'Zete7\\BelTransSat\\Models\\UpdateVehicleResponse',
+        'vehicleJaxb' => 'Zete7\\BelTransSat\\Models\\VehicleModel',
     );
 
     /**
@@ -68,7 +68,7 @@ class Vehicles extends BaseSoapClient
      *
      * @param string $vehicleId
      *
-     * @return \ItCenter\BelTransSat\Models\DeleteVehicleResponse
+     * @return \Zete7\BelTransSat\Models\DeleteVehicleResponse
      */
     public function deleteVehicle($vehicleId)
     {
@@ -83,7 +83,7 @@ class Vehicles extends BaseSoapClient
      *
      * @api
      *
-     * @return \ItCenter\BelTransSat\Models\GetVehiclesIdsResponse
+     * @return \Zete7\BelTransSat\Models\GetVehiclesIdsResponse
      */
     public function getVehiclesIds()
     {
@@ -97,9 +97,9 @@ class Vehicles extends BaseSoapClient
      *
      * @api
      *
-     * @param \ItCenter\BelTransSat\Models\VehicleModel $vehicle
+     * @param \Zete7\BelTransSat\Models\VehicleModel $vehicle
      *
-     * @return \ItCenter\BelTransSat\Models\AddVehicleResponse
+     * @return \Zete7\BelTransSat\Models\AddVehicleResponse
      */
     public function addVehicle($vehicle)
     {
@@ -114,9 +114,9 @@ class Vehicles extends BaseSoapClient
      *
      * @api
      *
-     * @param \ItCenter\BelTransSat\Models\VehicleModel $vehicle
+     * @param \Zete7\BelTransSat\Models\VehicleModel $vehicle
      *
-     * @return \ItCenter\BelTransSat\Models\UpdateVehicleResponse
+     * @return \Zete7\BelTransSat\Models\UpdateVehicleResponse
      */
     public function updateVehicle($vehicle)
     {
@@ -134,7 +134,7 @@ class Vehicles extends BaseSoapClient
      * @param string $vehicleId
      * @param string $zoneIds
      *
-     * @return \ItCenter\BelTransSat\Models\SetVehicleZonesResponse
+     * @return \Zete7\BelTransSat\Models\SetVehicleZonesResponse
      */
     public function setVehicleZones($vehicleId, $zoneIds)
     {
@@ -153,7 +153,7 @@ class Vehicles extends BaseSoapClient
      * @param string $vehicleId
      * @param string $driverId
      *
-     * @return \ItCenter\BelTransSat\Models\SetVehicleDriverResponse
+     * @return \Zete7\BelTransSat\Models\SetVehicleDriverResponse
      */
     public function setVehicleDriver($vehicleId, $driverId)
     {
@@ -170,7 +170,7 @@ class Vehicles extends BaseSoapClient
      * @api
      * @deprecated
      *
-     * @return \ItCenter\BelTransSat\Models\GetAllVehiclesResponse
+     * @return \Zete7\BelTransSat\Models\GetAllVehiclesResponse
      */
     public function getAllVehicles()
     {
@@ -188,7 +188,7 @@ class Vehicles extends BaseSoapClient
      * @param int $workBeginTime
      * @param int $workEndTime
      *
-     * @return \ItCenter\BelTransSat\Models\SetVehicleWorkTimeResponse
+     * @return \Zete7\BelTransSat\Models\SetVehicleWorkTimeResponse
      */
     public function setVehicleWorkTime($vehicleId, $workBeginTime, $workEndTime)
     {
@@ -207,7 +207,7 @@ class Vehicles extends BaseSoapClient
      *
      * @param string $vehicleId
      *
-     * @return \ItCenter\BelTransSat\Models\GetVehicleResponse
+     * @return \Zete7\BelTransSat\Models\GetVehicleResponse
      */
     public function getVehicle($vehicleId)
     {

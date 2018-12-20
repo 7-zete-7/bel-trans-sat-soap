@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -203,7 +203,7 @@ class CustomerDataModel
      *
      * The property has the following characteristics/restrictions:
      *
-     * @var \ItCenter\BelTransSat\Models\CostWrapper[]
+     * @var \Zete7\BelTransSat\Models\CostModel[]
      */
     public $costs;
 
@@ -262,7 +262,7 @@ class CustomerDataModel
      *
      * The property has the following characteristics/restrictions:
      *
-     * @var \ItCenter\BelTransSat\Models\GoodWrapper[]
+     * @var \Zete7\BelTransSat\Models\GoodModel[]
      */
     public $goods;
 }

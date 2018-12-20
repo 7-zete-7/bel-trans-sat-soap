@@ -1,30 +1,30 @@
 <?php
 
-namespace ItCenter\BelTransSat;
+namespace Zete7\BelTransSat;
 
-use ItCenter\BelTransSat\Models\AddPointRequest;
-use ItCenter\BelTransSat\Models\ChangeRouteInsertPointRequest;
-use ItCenter\BelTransSat\Models\GetAllRoutePointsRequest;
-use ItCenter\BelTransSat\Models\GetAllRoutesRequest;
-use ItCenter\BelTransSat\Models\GetCurrentPointsRequest;
-use ItCenter\BelTransSat\Models\GetPointStatusRequest;
-use ItCenter\BelTransSat\Models\GetRoutePointsRequest;
-use ItCenter\BelTransSat\Models\GetRoutesRequest;
-use ItCenter\BelTransSat\Models\GetSolutionRoutesRequest;
-use ItCenter\BelTransSat\Models\GetUpdatesRequest;
-use ItCenter\BelTransSat\Models\RemovePointRequest;
-use ItCenter\BelTransSat\Models\RestorePointRequest;
-use ItCenter\BelTransSat\Models\ServeRouteChangeAddRestRequest;
-use ItCenter\BelTransSat\Models\ServeRouteChangeChangeVehicleTimeRequest;
-use ItCenter\BelTransSat\Models\ServeRouteChangeEditPointPositionRequest;
-use ItCenter\BelTransSat\Models\ServeRouteChangeRemovePointRequest;
-use ItCenter\BelTransSat\Models\ServeRouteChangeRevertVehicleRequest;
-use ItCenter\BelTransSat\Models\ServeVrpRequest;
-use ItCenter\BelTransSat\Models\SetDriverToRouteRequest;
-use ItCenter\BelTransSat\Models\SetRouteLockedStatusRequest;
-use ItCenter\BelTransSat\Models\SetVehicleToRouteRequest;
-use ItCenter\BelTransSat\Models\UpdatePointRequest;
-use \SoapClient as BaseSoapClient;
+use Zete7\BelTransSat\Models\AddPointRequest;
+use Zete7\BelTransSat\Models\ChangeRouteInsertPointRequest;
+use Zete7\BelTransSat\Models\GetAllRoutePointsRequest;
+use Zete7\BelTransSat\Models\GetAllRoutesRequest;
+use Zete7\BelTransSat\Models\GetCurrentPointsRequest;
+use Zete7\BelTransSat\Models\GetPointStatusRequest;
+use Zete7\BelTransSat\Models\GetRoutePointsRequest;
+use Zete7\BelTransSat\Models\GetRoutesRequest;
+use Zete7\BelTransSat\Models\GetSolutionRoutesRequest;
+use Zete7\BelTransSat\Models\GetUpdatesRequest;
+use Zete7\BelTransSat\Models\RemovePointRequest;
+use Zete7\BelTransSat\Models\RestorePointRequest;
+use Zete7\BelTransSat\Models\ServeRouteChangeAddRestRequest;
+use Zete7\BelTransSat\Models\ServeRouteChangeChangeVehicleTimeRequest;
+use Zete7\BelTransSat\Models\ServeRouteChangeEditPointPositionRequest;
+use Zete7\BelTransSat\Models\ServeRouteChangeRemovePointRequest;
+use Zete7\BelTransSat\Models\ServeRouteChangeRevertVehicleRequest;
+use Zete7\BelTransSat\Models\ServeVrpRequest;
+use Zete7\BelTransSat\Models\SetDriverToRouteRequest;
+use Zete7\BelTransSat\Models\SetRouteLockedStatusRequest;
+use Zete7\BelTransSat\Models\SetVehicleToRouteRequest;
+use Zete7\BelTransSat\Models\UpdatePointRequest;
+use SoapClient as BaseSoapClient;
 
 /**
  * This class is generated from the following WSDL:
@@ -33,83 +33,83 @@ use \SoapClient as BaseSoapClient;
 class Vpr extends BaseSoapClient
 {
     protected $classMap = array(
-        'addPoint' => '\\ItCenter\\BelTransSat\\Models\\AddPointRequest',
-        'addPointResponse' => '\\ItCenter\\BelTransSat\\Models\\AddPointResponse',
-        'changeRouteInsertPoint' => '\\ItCenter\\BelTransSat\\Models\\ChangeRouteInsertPointRequest',
-        'changeRouteInsertPointResponse' => '\\ItCenter\\BelTransSat\\Models\\ChangeRouteInsertPointResponse',
-        'dataUpdates' => '\\ItCenter\\BelTransSat\\Models\\DataUpdatesModel',
-        'getAllRoutePoints' => '\\ItCenter\\BelTransSat\\Models\\GetAllRoutePointsRequest',
-        'getAllRoutePointsResponse' => '\\ItCenter\\BelTransSat\\Models\\GetAllRoutePointsResponse',
-        'getAllRoutes' => '\\ItCenter\\BelTransSat\\Models\\GetAllRoutesRequest',
-        'getAllRoutesResponse' => '\\ItCenter\\BelTransSat\\Models\\GetAllRoutesResponse',
-        'getCurrentPoints' => '\\ItCenter\\BelTransSat\\Models\\GetCurrentPointsRequest',
-        'getCurrentPointsResponse' => '\\ItCenter\\BelTransSat\\Models\\GetCurrentPointsResponse',
-        'getPointStatus' => '\\ItCenter\\BelTransSat\\Models\\GetPointStatusRequest',
-        'getPointStatusResponse' => '\\ItCenter\\BelTransSat\\Models\\GetPointStatusResponse',
-        'getRoutePoints' => '\\ItCenter\\BelTransSat\\Models\\GetRoutePointsRequest',
-        'getRoutePointsResponse' => '\\ItCenter\\BelTransSat\\Models\\GetRoutePointsResponse',
-        'getRoutes' => '\\ItCenter\\BelTransSat\\Models\\GetRoutesRequest',
-        'getRoutesResponse' => '\\ItCenter\\BelTransSat\\Models\\GetRoutesResponse',
-        'getSolutionRoutes' => '\\ItCenter\\BelTransSat\\Models\\GetSolutionRoutesRequest',
-        'getSolutionRoutesResponse' => '\\ItCenter\\BelTransSat\\Models\\GetSolutionRoutesResponse',
-        'getUpdates' => '\\ItCenter\\BelTransSat\\Models\\GetUpdatesRequest',
-        'getUpdatesResponse' => '\\ItCenter\\BelTransSat\\Models\\GetUpdatesResponse',
-        'removePoint' => '\\ItCenter\\BelTransSat\\Models\\RemovePointRequest',
-        'removePointResponse' => '\\ItCenter\\BelTransSat\\Models\\RemovePointResponse',
-        'restorePoint' => '\\ItCenter\\BelTransSat\\Models\\RestorePointRequest',
-        'restorePointResponse' => '\\ItCenter\\BelTransSat\\Models\\RestorePointResponse',
-        'serveRouteChangeAddRestRequest' => '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeAddRestRequest',
+        'addPoint' => '\\Zete7\\BelTransSat\\Models\\AddPointRequest',
+        'addPointResponse' => '\\Zete7\\BelTransSat\\Models\\AddPointResponse',
+        'changeRouteInsertPoint' => '\\Zete7\\BelTransSat\\Models\\ChangeRouteInsertPointRequest',
+        'changeRouteInsertPointResponse' => '\\Zete7\\BelTransSat\\Models\\ChangeRouteInsertPointResponse',
+        'dataUpdates' => '\\Zete7\\BelTransSat\\Models\\DataUpdatesModel',
+        'getAllRoutePoints' => '\\Zete7\\BelTransSat\\Models\\GetAllRoutePointsRequest',
+        'getAllRoutePointsResponse' => '\\Zete7\\BelTransSat\\Models\\GetAllRoutePointsResponse',
+        'getAllRoutes' => '\\Zete7\\BelTransSat\\Models\\GetAllRoutesRequest',
+        'getAllRoutesResponse' => '\\Zete7\\BelTransSat\\Models\\GetAllRoutesResponse',
+        'getCurrentPoints' => '\\Zete7\\BelTransSat\\Models\\GetCurrentPointsRequest',
+        'getCurrentPointsResponse' => '\\Zete7\\BelTransSat\\Models\\GetCurrentPointsResponse',
+        'getPointStatus' => '\\Zete7\\BelTransSat\\Models\\GetPointStatusRequest',
+        'getPointStatusResponse' => '\\Zete7\\BelTransSat\\Models\\GetPointStatusResponse',
+        'getRoutePoints' => '\\Zete7\\BelTransSat\\Models\\GetRoutePointsRequest',
+        'getRoutePointsResponse' => '\\Zete7\\BelTransSat\\Models\\GetRoutePointsResponse',
+        'getRoutes' => '\\Zete7\\BelTransSat\\Models\\GetRoutesRequest',
+        'getRoutesResponse' => '\\Zete7\\BelTransSat\\Models\\GetRoutesResponse',
+        'getSolutionRoutes' => '\\Zete7\\BelTransSat\\Models\\GetSolutionRoutesRequest',
+        'getSolutionRoutesResponse' => '\\Zete7\\BelTransSat\\Models\\GetSolutionRoutesResponse',
+        'getUpdates' => '\\Zete7\\BelTransSat\\Models\\GetUpdatesRequest',
+        'getUpdatesResponse' => '\\Zete7\\BelTransSat\\Models\\GetUpdatesResponse',
+        'removePoint' => '\\Zete7\\BelTransSat\\Models\\RemovePointRequest',
+        'removePointResponse' => '\\Zete7\\BelTransSat\\Models\\RemovePointResponse',
+        'restorePoint' => '\\Zete7\\BelTransSat\\Models\\RestorePointRequest',
+        'restorePointResponse' => '\\Zete7\\BelTransSat\\Models\\RestorePointResponse',
+        'serveRouteChangeAddRestRequest' => '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeAddRestRequest',
         'serveRouteChangeAddRestRequestResponse' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeAddRestResponse',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeAddRestResponse',
         'serveRouteChangeChangeVehicleTimeRequest' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeChangeVehicleTimeRequest',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeChangeVehicleTimeRequest',
         'serveRouteChangeChangeVehicleTimeRequestResponse' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeChangeVehicleTimeResponse',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeChangeVehicleTimeResponse',
         'serveRouteChangeEditPointPositionRequest' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeEditPointPositionRequest',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeEditPointPositionRequest',
         'serveRouteChangeEditPointPositionRequestResponse' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeEditPointPositionResponse',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeEditPointPositionResponse',
         'serveRouteChangeRemovePointRequest' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeRemovePointRequest',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeRemovePointRequest',
         'serveRouteChangeRemovePointRequestResponse' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeRemovePointResponse',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeRemovePointResponse',
         'serveRouteChangeRevertVehicleRequest' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeRevertVehicleRequest',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeRevertVehicleRequest',
         'serveRouteChangeRevertVehicleRequestResponse' =>
-            '\\ItCenter\\BelTransSat\\Models\\ServeRouteChangeRevertVehicleResponse',
-        'serveVrpRequest' => '\\ItCenter\\BelTransSat\\Models\\ServeVrpRequest',
-        'serveVrpRequestResponse' => '\\ItCenter\\BelTransSat\\Models\\ServeVrpResponse',
-        'setDriverToRoute' => '\\ItCenter\\BelTransSat\\Models\\SetDriverToRouteRequest',
-        'setDriverToRouteResponse' => '\\ItCenter\\BelTransSat\\Models\\SetDriverToRouteResponse',
-        'setRouteLockedStatus' => '\\ItCenter\\BelTransSat\\Models\\SetRouteLockedStatusRequest',
-        'setRouteLockedStatusResponse' => '\\ItCenter\\BelTransSat\\Models\\SetRouteLockedStatusResponse',
-        'setVehicleToRoute' => '\\ItCenter\\BelTransSat\\Models\\SetVehicleToRouteRequest',
-        'setVehicleToRouteResponse' => '\\ItCenter\\BelTransSat\\Models\\SetVehicleToRouteResponse',
-        'updatePoint' => '\\ItCenter\\BelTransSat\\Models\\UpdatePointRequest',
-        'updatePointResponse' => '\\ItCenter\\BelTransSat\\Models\\UpdatePointResponse',
-        'updatedPointData' => '\\ItCenter\\BelTransSat\\Models\\UpdatedPointData',
-        'routeRoutePoint' => '\\ItCenter\\BelTransSat\\Models\\RouteRoutePoint',
-        'routePoint' => '\\ItCenter\\BelTransSat\\Models\\RoutePoint',
-        'customerDataJaxb' => '\\ItCenter\\BelTransSat\\Models\\CustomerDataModel',
-        'cost' => '\\ItCenter\\BelTransSat\\Models\\CostModel',
-        'good' => '\\ItCenter\\BelTransSat\\Models\\GoodModel',
-        'routeChangeAddRestRequestJaxb' => '\\ItCenter\\BelTransSat\\Models\\RouteChangeAddRestRequestJaxb',
-        'vrpRouteEditRequestResult' => '\\ItCenter\\BelTransSat\\Models\\VrpRouteEditRequestResult',
-        'route' => '\\ItCenter\\BelTransSat\\Models\\RouteModel',
-        'routeChangeRevertVehicleRequestJaxb' => '\\ItCenter\\BelTransSat\\Models\\RouteChangeRevertVehicleRequestJaxb',
-        'UpdatedPointData' => '\\ItCenter\\BelTransSat\\Models\\UpdatedPointData',
+            '\\Zete7\\BelTransSat\\Models\\ServeRouteChangeRevertVehicleResponse',
+        'serveVrpRequest' => '\\Zete7\\BelTransSat\\Models\\ServeVrpRequest',
+        'serveVrpRequestResponse' => '\\Zete7\\BelTransSat\\Models\\ServeVrpResponse',
+        'setDriverToRoute' => '\\Zete7\\BelTransSat\\Models\\SetDriverToRouteRequest',
+        'setDriverToRouteResponse' => '\\Zete7\\BelTransSat\\Models\\SetDriverToRouteResponse',
+        'setRouteLockedStatus' => '\\Zete7\\BelTransSat\\Models\\SetRouteLockedStatusRequest',
+        'setRouteLockedStatusResponse' => '\\Zete7\\BelTransSat\\Models\\SetRouteLockedStatusResponse',
+        'setVehicleToRoute' => '\\Zete7\\BelTransSat\\Models\\SetVehicleToRouteRequest',
+        'setVehicleToRouteResponse' => '\\Zete7\\BelTransSat\\Models\\SetVehicleToRouteResponse',
+        'updatePoint' => '\\Zete7\\BelTransSat\\Models\\UpdatePointRequest',
+        'updatePointResponse' => '\\Zete7\\BelTransSat\\Models\\UpdatePointResponse',
+        'updatedPointData' => '\\Zete7\\BelTransSat\\Models\\UpdatedPointData',
+        'routeRoutePoint' => '\\Zete7\\BelTransSat\\Models\\RouteRoutePoint',
+        'routePoint' => '\\Zete7\\BelTransSat\\Models\\RoutePoint',
+        'customerDataJaxb' => '\\Zete7\\BelTransSat\\Models\\CustomerDataModel',
+        'cost' => '\\Zete7\\BelTransSat\\Models\\CostModel',
+        'good' => '\\Zete7\\BelTransSat\\Models\\GoodModel',
+        'routeChangeAddRestRequestJaxb' => '\\Zete7\\BelTransSat\\Models\\RouteChangeAddRestRequestJaxb',
+        'vrpRouteEditRequestResult' => '\\Zete7\\BelTransSat\\Models\\VrpRouteEditRequestResult',
+        'route' => '\\Zete7\\BelTransSat\\Models\\RouteModel',
+        'routeChangeRevertVehicleRequestJaxb' => '\\Zete7\\BelTransSat\\Models\\RouteChangeRevertVehicleRequestJaxb',
+        'UpdatedPointData' => '\\Zete7\\BelTransSat\\Models\\UpdatedPointData',
         'routeChangeChangeVehicleTimeRequestJaxb' =>
-            '\\ItCenter\\BelTransSat\\Models\\RouteChangeChangeVehicleTimeRequestJaxb',
-        'pointStatus' => '\\ItCenter\\BelTransSat\\Models\\PointStatus',
+            '\\Zete7\\BelTransSat\\Models\\RouteChangeChangeVehicleTimeRequestJaxb',
+        'pointStatus' => '\\Zete7\\BelTransSat\\Models\\PointStatus',
         'routeChangeEditPointPositionRequestJaxb' =>
-            '\\ItCenter\\BelTransSat\\Models\\RouteChangeEditPointPositionRequestJaxb',
-        'vrpRequestJaxb' => '\\ItCenter\\BelTransSat\\Models\\VrpRequestJaxb',
-        'vrpOptimizeRequestResult' => '\\ItCenter\\BelTransSat\\Models\\VrpOptimizeRequestResult',
-        'routeChangeRemovePointRequestJaxb' => '\\ItCenter\\BelTransSat\\Models\\RouteChangeRemovePointRequestJaxb',
-        'routeChangeInsertPointRequestJaxb' => '\\ItCenter\\BelTransSat\\Models\\RouteChangeInsertPointRequestJaxb',
-        'vrpRouteEditRequestResultCode' => '\\ItCenter\\BelTransSat\\Models\\VrpRouteEditRequestResultCode',
-        'routesChangesResultCode' => '\\ItCenter\\BelTransSat\\Models\\RoutesChangesResultCode',
-        'vrpRequestResultCode' => '\\ItCenter\\BelTransSat\\Models\\VrpRequestResultCode',
+            '\\Zete7\\BelTransSat\\Models\\RouteChangeEditPointPositionRequestJaxb',
+        'vrpRequestJaxb' => '\\Zete7\\BelTransSat\\Models\\VrpRequestJaxb',
+        'vrpOptimizeRequestResult' => '\\Zete7\\BelTransSat\\Models\\VrpOptimizeRequestResult',
+        'routeChangeRemovePointRequestJaxb' => '\\Zete7\\BelTransSat\\Models\\RouteChangeRemovePointRequestJaxb',
+        'routeChangeInsertPointRequestJaxb' => '\\Zete7\\BelTransSat\\Models\\RouteChangeInsertPointRequestJaxb',
+        'vrpRouteEditRequestResultCode' => '\\Zete7\\BelTransSat\\Models\\VrpRouteEditRequestResultCode',
+        'routesChangesResultCode' => '\\Zete7\\BelTransSat\\Models\\RoutesChangesResultCode',
+        'vrpRequestResultCode' => '\\Zete7\\BelTransSat\\Models\\VrpRequestResultCode',
     );
 
     /**
@@ -135,9 +135,9 @@ class Vpr extends BaseSoapClient
     /**
      * updatePoint
      *
-     * @param \ItCenter\BelTransSat\Models\CustomerDataModel $point
+     * @param \Zete7\BelTransSat\Models\CustomerDataModel $point
      *
-     * @return \ItCenter\BelTransSat\Models\UpdatePointResponse
+     * @return \Zete7\BelTransSat\Models\UpdatePointResponse
      */
     public function updatePoint($point)
     {
@@ -152,7 +152,7 @@ class Vpr extends BaseSoapClient
      *
      * @param string $id
      *
-     * @return \ItCenter\BelTransSat\Models\RemovePointResponse
+     * @return \Zete7\BelTransSat\Models\RemovePointResponse
      */
     public function removePoint($id)
     {
@@ -167,7 +167,7 @@ class Vpr extends BaseSoapClient
      *
      * @param string $id
      *
-     * @return \ItCenter\BelTransSat\Models\RestorePointResponse
+     * @return \Zete7\BelTransSat\Models\RestorePointResponse
      */
     public function restorePoint($id)
     {
@@ -182,7 +182,7 @@ class Vpr extends BaseSoapClient
      *
      * @param string $id
      *
-     * @return \ItCenter\BelTransSat\Models\GetPointStatusResponse
+     * @return \Zete7\BelTransSat\Models\GetPointStatusResponse
      */
     public function getPointStatus($id)
     {
@@ -195,7 +195,7 @@ class Vpr extends BaseSoapClient
     /**
      * getCurrentPoints
      *
-     * @return \ItCenter\BelTransSat\Models\GetCurrentPointsResponse
+     * @return \Zete7\BelTransSat\Models\GetCurrentPointsResponse
      */
     public function getCurrentPoints()
     {
@@ -209,7 +209,7 @@ class Vpr extends BaseSoapClient
      *
      * @param int $solutionId
      *
-     * @return \ItCenter\BelTransSat\Models\GetSolutionRoutesResponse
+     * @return \Zete7\BelTransSat\Models\GetSolutionRoutesResponse
      */
     public function getSolutionRoutes($solutionId)
     {
@@ -222,7 +222,7 @@ class Vpr extends BaseSoapClient
     /**
      * getAllRoutes
      *
-     * @return \ItCenter\BelTransSat\Models\GetAllRoutesResponse
+     * @return \Zete7\BelTransSat\Models\GetAllRoutesResponse
      */
     public function getAllRoutes()
     {
@@ -238,7 +238,7 @@ class Vpr extends BaseSoapClient
      * @param boolean $addDetailedData
      * @param boolean $addToken
      *
-     * @return \ItCenter\BelTransSat\Models\GetRoutePointsResponse
+     * @return \Zete7\BelTransSat\Models\GetRoutePointsResponse
      */
     public function getRoutePoints($routeId, $addDetailedData, $addToken)
     {
@@ -256,7 +256,7 @@ class Vpr extends BaseSoapClient
      * @param boolean $addDetailedData
      * @param boolean $addToken
      *
-     * @return \ItCenter\BelTransSat\Models\GetAllRoutePointsResponse
+     * @return \Zete7\BelTransSat\Models\GetAllRoutePointsResponse
      */
     public function getAllRoutePoints($addDetailedData, $addToken)
     {
@@ -275,7 +275,7 @@ class Vpr extends BaseSoapClient
      * @param string $pointsLastTimestamp
      * @param int $routeId
      *
-     * @return \ItCenter\BelTransSat\Models\GetUpdatesResponse
+     * @return \Zete7\BelTransSat\Models\GetUpdatesResponse
      */
     public function getUpdates($routesDeliveryDate, $routesLastTimestamp, $pointsLastTimestamp, $routeId)
     {
@@ -294,7 +294,7 @@ class Vpr extends BaseSoapClient
      * @param int $routeId
      * @param string $vehicleId
      *
-     * @return \ItCenter\BelTransSat\Models\SetVehicleToRouteResponse
+     * @return \Zete7\BelTransSat\Models\SetVehicleToRouteResponse
      */
     public function setVehicleToRoute($routeId, $vehicleId)
     {
@@ -311,7 +311,7 @@ class Vpr extends BaseSoapClient
      * @param int $routeId
      * @param string $driverId
      *
-     * @return \ItCenter\BelTransSat\Models\SetDriverToRouteResponse
+     * @return \Zete7\BelTransSat\Models\SetDriverToRouteResponse
      */
     public function setDriverToRoute($routeId, $driverId)
     {
@@ -328,7 +328,7 @@ class Vpr extends BaseSoapClient
      * @param int $routeId
      * @param boolean $locked
      *
-     * @return \ItCenter\BelTransSat\Models\SetRouteLockedStatusResponse
+     * @return \Zete7\BelTransSat\Models\SetRouteLockedStatusResponse
      */
     public function setRouteLockedStatus($routeId, $locked)
     {
@@ -342,9 +342,9 @@ class Vpr extends BaseSoapClient
     /**
      * changeRouteInsertPoint
      *
-     * @param \ItCenter\BelTransSat\Models\RouteChangeInsertPointRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\RouteChangeInsertPointRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ChangeRouteInsertPointResponse
+     * @return \Zete7\BelTransSat\Models\ChangeRouteInsertPointResponse
      */
     public function changeRouteInsertPoint($request)
     {
@@ -357,9 +357,9 @@ class Vpr extends BaseSoapClient
     /**
      * serveRouteChangeRevertVehicleRequest
      *
-     * @param \ItCenter\BelTransSat\Models\RouteChangeRevertVehicleRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\RouteChangeRevertVehicleRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ServeRouteChangeRevertVehicleResponse
+     * @return \Zete7\BelTransSat\Models\ServeRouteChangeRevertVehicleResponse
      */
     public function serveRouteChangeRevertVehicleRequest($request)
     {
@@ -372,9 +372,9 @@ class Vpr extends BaseSoapClient
     /**
      * serveRouteChangeAddRestRequest
      *
-     * @param \ItCenter\BelTransSat\Models\RouteChangeAddRestRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\RouteChangeAddRestRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ServeRouteChangeAddRestResponse
+     * @return \Zete7\BelTransSat\Models\ServeRouteChangeAddRestResponse
      */
     public function serveRouteChangeAddRestRequest($request)
     {
@@ -387,9 +387,9 @@ class Vpr extends BaseSoapClient
     /**
      * serveRouteChangeChangeVehicleTimeRequest
      *
-     * @param \ItCenter\BelTransSat\Models\RouteChangeChangeVehicleTimeRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\RouteChangeChangeVehicleTimeRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ServeRouteChangeChangeVehicleTimeResponse
+     * @return \Zete7\BelTransSat\Models\ServeRouteChangeChangeVehicleTimeResponse
      */
     public function serveRouteChangeChangeVehicleTimeRequest($request)
     {
@@ -402,9 +402,9 @@ class Vpr extends BaseSoapClient
     /**
      * serveRouteChangeEditPointPositionRequest
      *
-     * @param \ItCenter\BelTransSat\Models\RouteChangeEditPointPositionRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\RouteChangeEditPointPositionRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ServeRouteChangeEditPointPositionResponse
+     * @return \Zete7\BelTransSat\Models\ServeRouteChangeEditPointPositionResponse
      */
     public function serveRouteChangeEditPointPositionRequest($request)
     {
@@ -417,9 +417,9 @@ class Vpr extends BaseSoapClient
     /**
      * serveVrpRequest
      *
-     * @param \ItCenter\BelTransSat\Models\VrpRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\VrpRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ServeVrpResponse
+     * @return \Zete7\BelTransSat\Models\ServeVrpResponse
      */
     public function serveVrpRequest($request)
     {
@@ -432,9 +432,9 @@ class Vpr extends BaseSoapClient
     /**
      * serveRouteChangeRemovePointRequest
      *
-     * @param \ItCenter\BelTransSat\Models\RouteChangeRemovePointRequestJaxb $request
+     * @param \Zete7\BelTransSat\Models\RouteChangeRemovePointRequestJaxb $request
      *
-     * @return \ItCenter\BelTransSat\Models\ServeRouteChangeRemovePointResponse
+     * @return \Zete7\BelTransSat\Models\ServeRouteChangeRemovePointResponse
      */
     public function serveRouteChangeRemovePointRequest($request)
     {
@@ -447,9 +447,9 @@ class Vpr extends BaseSoapClient
     /**
      * addPoint
      *
-     * @param \ItCenter\BelTransSat\Models\CustomerDataModel $point
+     * @param \Zete7\BelTransSat\Models\CustomerDataModel $point
      *
-     * @return \ItCenter\BelTransSat\Models\AddPointResponse
+     * @return \Zete7\BelTransSat\Models\AddPointResponse
      */
     public function addPoint($point)
     {
@@ -464,7 +464,7 @@ class Vpr extends BaseSoapClient
      *
      * @param string $deliveryDate
      *
-     * @return \ItCenter\BelTransSat\Models\GetRoutesResponse
+     * @return \Zete7\BelTransSat\Models\GetRoutesResponse
      */
     public function getRoutes($deliveryDate)
     {

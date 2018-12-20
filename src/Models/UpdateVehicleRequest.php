@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class UpdateVehicleRequest
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:vehicleJaxb
      *
-     * @var \ItCenter\BelTransSat\Models\VehicleModel
+     * @var \Zete7\BelTransSat\Models\VehicleModel
      */
     public $vehicle = null;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -44,7 +44,7 @@ class PointStatus
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:route
      *
-     * @var \ItCenter\BelTransSat\Models\RouteModel
+     * @var \Zete7\BelTransSat\Models\RouteModel
      */
     public $route;
 }

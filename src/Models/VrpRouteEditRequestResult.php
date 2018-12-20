@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class VrpRouteEditRequestResult
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:vrpRouteEditRequestResultCode
      *
-     * @var \ItCenter\BelTransSat\Models\VrpRouteEditRequestResultCode
+     * @var \Zete7\BelTransSat\Models\VrpRouteEditRequestResultCode
      */
     public $code;
 

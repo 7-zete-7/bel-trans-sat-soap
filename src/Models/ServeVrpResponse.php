@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class ServeVrpResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:vrpOptimizeRequestResult
      *
-     * @var \ItCenter\BelTransSat\Models\VrpOptimizeRequestResult
+     * @var \Zete7\BelTransSat\Models\VrpOptimizeRequestResult
      */
     public $return;
 }

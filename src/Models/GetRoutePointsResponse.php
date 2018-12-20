@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class GetRoutePointsResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routePoint
      *
-     * @var array(\ItCenter\BelTransSat\Models\routePoint)
+     * @var array(\Zete7\BelTransSat\Models\routePoint)
      */
     public $routePoint = null;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ItCenter\BelTransSat\Models;
+namespace Zete7\BelTransSat\Models;
 
 /**
  * This class is generated from the following WSDL:
@@ -14,7 +14,7 @@ class DataUpdatesModel
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routesChangesResultCode
      *
-     * @var \ItCenter\BelTransSat\Models\RoutesChangesResultCode
+     * @var \Zete7\BelTransSat\Models\RoutesChangesResultCode
      */
     public $code;
 
@@ -33,7 +33,7 @@ class DataUpdatesModel
      *
      * The property has the following characteristics/restrictions:
      *
-     * @var \ItCenter\BelTransSat\Models\RouteWrapper[]
+     * @var \Zete7\BelTransSat\Models\RouteModel[]
      */
     public $routes;
 
@@ -43,7 +43,7 @@ class DataUpdatesModel
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:UpdatedPointData
      *
-     * @var \ItCenter\BelTransSat\Models\UpdatedPointDataWrapper
+     * @var \Zete7\BelTransSat\Models\UpdatedPointDataWrapper
      */
     public $points;
 }
