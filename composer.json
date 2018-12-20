@@ -21,7 +21,12 @@
   "repositories": [
     {
       "type": "github",
-      "url": "https://github.com/7-zete-7/bel-trans-sat-soap"
+      "url": "https://github.com/7-zete-7/bel-trans-sat-soap",
+      "branch": "master"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.org/packages/zete7/bel-trans-sat-soap"
     }
   ]
 }
