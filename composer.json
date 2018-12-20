@@ -2,7 +2,7 @@
   "name": "zete7/bel-trans-sat-soap",
   "description": "BelTransSat SOAP API",
   "type": "library",
-  "license": "Apache",
+  "license": "Apache-2.0",
   "autoload": {
     "psr-4": {
       "Zete7\\BelTransSat\\": "src/"
