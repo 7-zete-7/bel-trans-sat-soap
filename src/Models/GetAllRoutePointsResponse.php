@@ -14,7 +14,7 @@ class GetAllRoutePointsResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:routeRoutePoint
      *
-     * @var array(\Zete7\BelTransSat\Models\routeRoutePoint)
+     * @var \Zete7\BelTransSat\Models\routeRoutePoint[]|\Zete7\BelTransSat\Models\routeRoutePoint|null
      */
-    public $routePoint = null;
+    public $routePoint;
 }

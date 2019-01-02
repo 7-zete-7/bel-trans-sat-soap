@@ -115,8 +115,8 @@ class Vpr extends BaseSoapClient
     /**
      * Constructor.
      *
-     * @param string               $wsdl    WSDL file
-     * @param array(string=>mixed) $options Options array
+     * @param string $wsdl    WSDL file
+     * @param mixed  $options Options array
      */
     public function __construct($wsdl, array $options = array())
     {
@@ -127,6 +127,9 @@ class Vpr extends BaseSoapClient
         parent::__construct($wsdl, $options);
     }
 
+    /**
+     * @return string[]
+     */
     public function getClassMap()
     {
         return $this->classMap;
@@ -137,14 +140,21 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\CustomerDataModel $point
      *
-     * @return \Zete7\BelTransSat\Models\UpdatePointResponse
+     * @return bool
+     * @throws \Exception
      */
     public function updatePoint($point)
     {
         $parameters = new UpdatePointRequest();
         $parameters->point = $point;
 
-        return $this->__soapCall('updatePoint', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\UpdatePointResponse $result */
+        $result = $this->__soapCall('updatePoint', array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -152,14 +162,21 @@ class Vpr extends BaseSoapClient
      *
      * @param string $id
      *
-     * @return \Zete7\BelTransSat\Models\RemovePointResponse
+     * @return bool
+     * @throws \Exception
      */
     public function removePoint($id)
     {
         $parameters = new RemovePointRequest();
         $parameters->id = $id;
 
-        return $this->__soapCall('removePoint', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\RemovePointResponse $result */
+        $result = $this->__soapCall('removePoint', array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -167,14 +184,21 @@ class Vpr extends BaseSoapClient
      *
      * @param string $id
      *
-     * @return \Zete7\BelTransSat\Models\RestorePointResponse
+     * @return bool
+     * @throws \Exception
      */
     public function restorePoint($id)
     {
         $parameters = new RestorePointRequest();
         $parameters->id = $id;
 
-        return $this->__soapCall('restorePoint', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\RestorePointResponse $result */
+        $result = $this->__soapCall('restorePoint', array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -182,26 +206,37 @@ class Vpr extends BaseSoapClient
      *
      * @param string $id
      *
-     * @return \Zete7\BelTransSat\Models\GetPointStatusResponse
+     * @return \Zete7\BelTransSat\Models\PointStatus
      */
     public function getPointStatus($id)
     {
         $parameters = new GetPointStatusRequest();
         $parameters->id = $id;
 
-        return $this->__soapCall('getPointStatus', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetPointStatusResponse $result */
+        $result = $this->__soapCall('getPointStatus', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
      * getCurrentPoints
      *
-     * @return \Zete7\BelTransSat\Models\GetCurrentPointsResponse
+     * @return \Zete7\BelTransSat\Models\CustomerDataModel[]
      */
     public function getCurrentPoints()
     {
         $parameters = new GetCurrentPointsRequest();
 
-        return $this->__soapCall('getCurrentPoints', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetCurrentPointsResponse $result */
+        $result = $this->__soapCall('getCurrentPoints', array('parameters' => $parameters));
+        if (null === $result) {
+            return array();
+        } elseif (!is_array($result->point)) {
+            return array($result->point);
+        } else {
+            return $result->point;
+        }
     }
 
     /**
@@ -209,26 +244,42 @@ class Vpr extends BaseSoapClient
      *
      * @param int $solutionId
      *
-     * @return \Zete7\BelTransSat\Models\GetSolutionRoutesResponse
+     * @return \Zete7\BelTransSat\Models\RouteModel[]
      */
     public function getSolutionRoutes($solutionId)
     {
         $parameters = new GetSolutionRoutesRequest();
         $parameters->solutionId = $solutionId;
 
-        return $this->__soapCall('getSolutionRoutes', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetSolutionRoutesResponse $result */
+        $result = $this->__soapCall('getSolutionRoutes', array('parameters' => $parameters));
+        if (null === $result->route) {
+            return array();
+        } elseif (!is_array($result->route)) {
+            return array($result->route);
+        } else {
+            return $result->route;
+        }
     }
 
     /**
      * getAllRoutes
      *
-     * @return \Zete7\BelTransSat\Models\GetAllRoutesResponse
+     * @return \Zete7\BelTransSat\Models\RouteModel[]
      */
     public function getAllRoutes()
     {
         $parameters = new GetAllRoutesRequest();
 
-        return $this->__soapCall('getAllRoutes', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetAllRoutesResponse $result */
+        $result = $this->__soapCall('getAllRoutes', array('parameters' => $parameters));
+        if (null === $result->route) {
+            return array();
+        } elseif (!is_array($result->route)) {
+            return array($result->route);
+        } else {
+            return $result->route;
+        }
     }
 
     /**
@@ -238,7 +289,7 @@ class Vpr extends BaseSoapClient
      * @param boolean $addDetailedData
      * @param boolean $addToken
      *
-     * @return \Zete7\BelTransSat\Models\GetRoutePointsResponse
+     * @return \Zete7\BelTransSat\Models\RoutePoint[]
      */
     public function getRoutePoints($routeId, $addDetailedData, $addToken)
     {
@@ -247,7 +298,15 @@ class Vpr extends BaseSoapClient
         $parameters->addDetailedData = $addDetailedData;
         $parameters->addToken = $addToken;
 
-        return $this->__soapCall('getRoutePoints', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetRoutePointsResponse $result */
+        $result = $this->__soapCall('getRoutePoints', array('parameters' => $parameters));
+        if (null === $result->routePoint) {
+            return array();
+        } elseif (!is_array($result->routePoint)) {
+            return array($result->routePoint);
+        } else {
+            return $result->routePoint;
+        }
     }
 
     /**
@@ -256,7 +315,7 @@ class Vpr extends BaseSoapClient
      * @param boolean $addDetailedData
      * @param boolean $addToken
      *
-     * @return \Zete7\BelTransSat\Models\GetAllRoutePointsResponse
+     * @return \Zete7\BelTransSat\Models\routeRoutePoint[]
      */
     public function getAllRoutePoints($addDetailedData, $addToken)
     {
@@ -264,7 +323,15 @@ class Vpr extends BaseSoapClient
         $parameters->addDetailedData = $addDetailedData;
         $parameters->addToken = $addToken;
 
-        return $this->__soapCall('getAllRoutePoints', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetAllRoutePointsResponse $result */
+        $result = $this->__soapCall('getAllRoutePoints', array('parameters' => $parameters));
+        if (null === $result->routePoint) {
+            return array();
+        } elseif (!is_array($result->routePoint)) {
+            return array($result->routePoint);
+        } else {
+            return $result->routePoint;
+        }
     }
 
     /**
@@ -275,7 +342,7 @@ class Vpr extends BaseSoapClient
      * @param string $pointsLastTimestamp
      * @param int $routeId
      *
-     * @return \Zete7\BelTransSat\Models\GetUpdatesResponse
+     * @return \Zete7\BelTransSat\Models\DataUpdatesModel
      */
     public function getUpdates($routesDeliveryDate, $routesLastTimestamp, $pointsLastTimestamp, $routeId)
     {
@@ -285,7 +352,10 @@ class Vpr extends BaseSoapClient
         $parameters->pointsLastTimestamp = $pointsLastTimestamp;
         $parameters->routeId = $routeId;
 
-        return $this->__soapCall('getUpdates', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetUpdatesResponse $result */
+        $result = $this->__soapCall('getUpdates', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -294,7 +364,8 @@ class Vpr extends BaseSoapClient
      * @param int $routeId
      * @param string $vehicleId
      *
-     * @return \Zete7\BelTransSat\Models\SetVehicleToRouteResponse
+     * @return bool
+     * @throws \Exception
      */
     public function setVehicleToRoute($routeId, $vehicleId)
     {
@@ -302,16 +373,25 @@ class Vpr extends BaseSoapClient
         $parameters->routeId = $routeId;
         $parameters->vehicleId = $vehicleId;
 
-        return $this->__soapCall('setVehicleToRoute', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\SetVehicleToRouteResponse $result */
+        $result = $this->__soapCall('setVehicleToRoute', array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
      * setDriverToRoute
      *
+     * @api
+     *
      * @param int $routeId
      * @param string $driverId
      *
-     * @return \Zete7\BelTransSat\Models\SetDriverToRouteResponse
+     * @return bool
+     * @throws \Exception
      */
     public function setDriverToRoute($routeId, $driverId)
     {
@@ -319,16 +399,25 @@ class Vpr extends BaseSoapClient
         $parameters->routeId = $routeId;
         $parameters->driverId = $driverId;
 
-        return $this->__soapCall('setDriverToRoute', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\SetDriverToRouteResponse $result */
+        $result = $this->__soapCall('setDriverToRoute', array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
      * setRouteLockedStatus
      *
+     * @api
+     *
      * @param int $routeId
      * @param boolean $locked
      *
-     * @return \Zete7\BelTransSat\Models\SetRouteLockedStatusResponse
+     * @return bool
+     * @throws \Exception
      */
     public function setRouteLockedStatus($routeId, $locked)
     {
@@ -336,7 +425,13 @@ class Vpr extends BaseSoapClient
         $parameters->routeId = $routeId;
         $parameters->locked = $locked;
 
-        return $this->__soapCall('setRouteLockedStatus', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\SetRouteLockedStatusResponse $result */
+        $result = $this->__soapCall('setRouteLockedStatus', array('parameters' => $parameters));
+        if (!is_bool($result)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -344,14 +439,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\RouteChangeInsertPointRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ChangeRouteInsertPointResponse
+     * @return \Zete7\BelTransSat\Models\VrpRouteEditRequestResult
      */
     public function changeRouteInsertPoint($request)
     {
         $parameters = new ChangeRouteInsertPointRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('changeRouteInsertPoint', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ChangeRouteInsertPointResponse $result */
+        $result = $this->__soapCall('changeRouteInsertPoint', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -359,14 +457,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\RouteChangeRevertVehicleRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ServeRouteChangeRevertVehicleResponse
+     * @return \Zete7\BelTransSat\Models\VrpRouteEditRequestResult
      */
     public function serveRouteChangeRevertVehicleRequest($request)
     {
         $parameters = new ServeRouteChangeRevertVehicleRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('serveRouteChangeRevertVehicleRequest', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ServeRouteChangeRevertVehicleResponse $result */
+        $result = $this->__soapCall('serveRouteChangeRevertVehicleRequest', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -374,14 +475,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\RouteChangeAddRestRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ServeRouteChangeAddRestResponse
+     * @return \Zete7\BelTransSat\Models\VrpRouteEditRequestResult
      */
     public function serveRouteChangeAddRestRequest($request)
     {
         $parameters = new ServeRouteChangeAddRestRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('serveRouteChangeAddRestRequest', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ServeRouteChangeAddRestResponse $result */
+        $result = $this->__soapCall('serveRouteChangeAddRestRequest', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -389,14 +493,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\RouteChangeChangeVehicleTimeRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ServeRouteChangeChangeVehicleTimeResponse
+     * @return \Zete7\BelTransSat\Models\VrpRouteEditRequestResult
      */
     public function serveRouteChangeChangeVehicleTimeRequest($request)
     {
         $parameters = new ServeRouteChangeChangeVehicleTimeRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('serveRouteChangeChangeVehicleTimeRequest', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ServeRouteChangeChangeVehicleTimeResponse $result */
+        $result = $this->__soapCall('serveRouteChangeChangeVehicleTimeRequest', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -404,14 +511,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\RouteChangeEditPointPositionRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ServeRouteChangeEditPointPositionResponse
+     * @return \Zete7\BelTransSat\Models\VrpRouteEditRequestResult
      */
     public function serveRouteChangeEditPointPositionRequest($request)
     {
         $parameters = new ServeRouteChangeEditPointPositionRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('serveRouteChangeEditPointPositionRequest', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ServeRouteChangeEditPointPositionResponse $result */
+        $result = $this->__soapCall('serveRouteChangeEditPointPositionRequest', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -419,14 +529,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\VrpRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ServeVrpResponse
+     * @return \Zete7\BelTransSat\Models\VrpOptimizeRequestResult
      */
     public function serveVrpRequest($request)
     {
         $parameters = new ServeVrpRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('serveVrpRequest', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ServeVrpResponse $result */
+        $result = $this->__soapCall('serveVrpRequest', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -434,14 +547,17 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\RouteChangeRemovePointRequestJaxb $request
      *
-     * @return \Zete7\BelTransSat\Models\ServeRouteChangeRemovePointResponse
+     * @return \Zete7\BelTransSat\Models\VrpRouteEditRequestResult
      */
     public function serveRouteChangeRemovePointRequest($request)
     {
         $parameters = new ServeRouteChangeRemovePointRequest();
         $parameters->request = $request;
 
-        return $this->__soapCall('serveRouteChangeRemovePointRequest', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\ServeRouteChangeRemovePointResponse $result */
+        $result = $this->__soapCall('serveRouteChangeRemovePointRequest', array('parameters' => $parameters));
+
+        return $result->return;
     }
 
     /**
@@ -449,14 +565,21 @@ class Vpr extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\CustomerDataModel $point
      *
-     * @return \Zete7\BelTransSat\Models\AddPointResponse
+     * @return bool
+     * @throws \Exception
      */
     public function addPoint($point)
     {
         $parameters = new AddPointRequest();
         $parameters->point = $point;
 
-        return $this->__soapCall('addPoint', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\AddPointResponse $result */
+        $result = $this->__soapCall('addPoint', array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -464,13 +587,21 @@ class Vpr extends BaseSoapClient
      *
      * @param string $deliveryDate
      *
-     * @return \Zete7\BelTransSat\Models\GetRoutesResponse
+     * @return \Zete7\BelTransSat\Models\RouteModel[]
      */
     public function getRoutes($deliveryDate)
     {
         $parameters = new GetRoutesRequest();
         $parameters->deliveryDate = $deliveryDate;
 
-        return $this->__soapCall('getRoutes', array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetRoutesResponse $result */
+        $result = $this->__soapCall('getRoutes', array('parameters' => $parameters));
+        if (null === $result->route) {
+            return array();
+        } elseif (!is_array($result->route)) {
+            return array($result->route);
+        } else {
+            return $result->route;
+        }
     }
 }

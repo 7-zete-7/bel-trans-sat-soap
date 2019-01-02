@@ -16,5 +16,5 @@ class GetUpdatesResponse
      *
      * @var \Zete7\BelTransSat\Models\DataUpdatesModel
      */
-    public $return = null;
+    public $return;
 }

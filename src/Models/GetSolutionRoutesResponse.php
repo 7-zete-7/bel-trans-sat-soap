@@ -14,7 +14,7 @@ class GetSolutionRoutesResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:route
      *
-     * @var array(\Zete7\BelTransSat\Models\route)
+     * @var \Zete7\BelTransSat\Models\RouteModel[]|\Zete7\BelTransSat\Models\RouteModel|null
      */
-    public $route = null;
+    public $route;
 }

@@ -16,5 +16,5 @@ class RemovePointResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

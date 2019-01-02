@@ -16,5 +16,5 @@ class SetVehicleWorkTimeResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

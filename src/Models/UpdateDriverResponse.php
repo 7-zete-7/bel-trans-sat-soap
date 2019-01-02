@@ -16,5 +16,5 @@ class UpdateDriverResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

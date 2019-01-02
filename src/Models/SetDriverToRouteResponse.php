@@ -16,5 +16,5 @@ class SetDriverToRouteResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

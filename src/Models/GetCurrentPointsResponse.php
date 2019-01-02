@@ -14,7 +14,7 @@ class GetCurrentPointsResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:customerDataJaxb
      *
-     * @var array(\Zete7\BelTransSat\Models\customerDataJaxb)
+     * @var \Zete7\BelTransSat\Models\CustomerDataModel[]|\Zete7\BelTransSat\Models\CustomerDataModel|null
      */
-    public $point = null;
+    public $point;
 }

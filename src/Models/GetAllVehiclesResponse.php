@@ -14,7 +14,7 @@ class GetAllVehiclesResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: tns:vehicleJaxb
      *
-     * @var array(\Zete7\BelTransSat\Models\vehicleJaxb)
+     * @var \Zete7\BelTransSat\Models\VehicleModel[]|\Zete7\BelTransSat\Models\VehicleModel|null
      */
     public $return;
 }

@@ -16,5 +16,5 @@ class AddPointResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

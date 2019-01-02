@@ -16,5 +16,5 @@ class SetVehicleDriverResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

@@ -153,7 +153,7 @@ class UpdatedPointData
      * The property has the following characteristics/restrictions:
      * - SchemaType: xs:sequence of xs:string
      *
-     * @var array(array('photoId' => string))
+     * @var string[][]
      */
     public $photoIds;
 

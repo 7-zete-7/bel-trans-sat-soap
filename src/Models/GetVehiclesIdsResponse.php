@@ -14,7 +14,7 @@ class GetVehiclesIdsResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: xs:string
      *
-     * @var array(string)
+     * @var string[]|string|null
      */
-    public $vehicleId = null;
+    public $vehicleId;
 }

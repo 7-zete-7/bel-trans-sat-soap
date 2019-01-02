@@ -44,7 +44,7 @@ class VrpOptimizeRequestResult
      * The property has the following characteristics/restrictions:
      * - SchemaType: xs:int
      *
-     * @var array(int)
+     * @var int[]
      */
     public $routeId;
 

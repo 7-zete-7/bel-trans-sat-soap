@@ -16,5 +16,5 @@ class UpdatePointResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

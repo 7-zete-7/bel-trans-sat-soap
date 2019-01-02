@@ -14,7 +14,7 @@ class GetDriversIdsResponse
      * The property has the following characteristics/restrictions:
      * - SchemaType: xs:string
      *
-     * @var array(string)
+     * @var string[]|string|null
      */
-    public $driverId = null;
+    public $driverId;
 }

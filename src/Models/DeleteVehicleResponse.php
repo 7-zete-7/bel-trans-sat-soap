@@ -16,5 +16,5 @@ class DeleteVehicleResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

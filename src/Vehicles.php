@@ -44,8 +44,8 @@ class Vehicles extends BaseSoapClient
     /**
      * Constructor.
      *
-     * @param string               $wsdl    WSDL file
-     * @param array(string=>mixed) $options Options array
+     * @param string  $wsdl    WSDL file
+     * @param mixed[] $options Options array
      */
     public function __construct($wsdl, array $options = array())
     {
@@ -56,6 +56,9 @@ class Vehicles extends BaseSoapClient
         parent::__construct($wsdl, $options);
     }
 
+    /**
+     * @return string[]
+     */
     public function getClassMap()
     {
         return $this->classMap;
@@ -68,14 +71,21 @@ class Vehicles extends BaseSoapClient
      *
      * @param string $vehicleId
      *
-     * @return \Zete7\BelTransSat\Models\DeleteVehicleResponse
+     * @return bool
+     * @throws \Exception
      */
     public function deleteVehicle($vehicleId)
     {
         $parameters = new DeleteVehicleRequest();
         $parameters->vehicleId = $vehicleId;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\DeleteVehicleResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -83,13 +93,21 @@ class Vehicles extends BaseSoapClient
      *
      * @api
      *
-     * @return \Zete7\BelTransSat\Models\GetVehiclesIdsResponse
+     * @return string[]
      */
     public function getVehiclesIds()
     {
         $parameters = new GetVehiclesIdsRequest();
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetVehiclesIdsResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (null === $result->vehicleId) {
+            return array();
+        } elseif (!is_array($result->vehicleId)) {
+            return array($result->vehicleId);
+        } else {
+            return $result->vehicleId;
+        }
     }
 
     /**
@@ -99,14 +117,21 @@ class Vehicles extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\VehicleModel $vehicle
      *
-     * @return \Zete7\BelTransSat\Models\AddVehicleResponse
+     * @return bool
+     * @throws \Exception
      */
     public function addVehicle($vehicle)
     {
         $parameters = new AddVehicleRequest();
         $parameters->vehicle = $vehicle;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\AddVehicleResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -116,14 +141,21 @@ class Vehicles extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\VehicleModel $vehicle
      *
-     * @return \Zete7\BelTransSat\Models\UpdateVehicleResponse
+     * @return bool
+     * @throws \Exception
      */
     public function updateVehicle($vehicle)
     {
         $parameters = new UpdateVehicleRequest();
         $parameters->vehicle = $vehicle;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\UpdateVehicleResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -134,7 +166,8 @@ class Vehicles extends BaseSoapClient
      * @param string $vehicleId
      * @param string $zoneIds
      *
-     * @return \Zete7\BelTransSat\Models\SetVehicleZonesResponse
+     * @return bool
+     * @throws \Exception
      */
     public function setVehicleZones($vehicleId, $zoneIds)
     {
@@ -142,7 +175,13 @@ class Vehicles extends BaseSoapClient
         $parameters->vehicleId = $vehicleId;
         $parameters->zoneIds = $zoneIds;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\SetVehicleZonesResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -153,7 +192,8 @@ class Vehicles extends BaseSoapClient
      * @param string $vehicleId
      * @param string $driverId
      *
-     * @return \Zete7\BelTransSat\Models\SetVehicleDriverResponse
+     * @return bool
+     * @throws \Exception
      */
     public function setVehicleDriver($vehicleId, $driverId)
     {
@@ -161,7 +201,13 @@ class Vehicles extends BaseSoapClient
         $parameters->vehicleId = $vehicleId;
         $parameters->driverId = $driverId;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\SetVehicleDriverResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -170,13 +216,21 @@ class Vehicles extends BaseSoapClient
      * @api
      * @deprecated
      *
-     * @return \Zete7\BelTransSat\Models\GetAllVehiclesResponse
+     * @return \Zete7\BelTransSat\Models\VehicleModel[]
      */
     public function getAllVehicles()
     {
         $parameters = new GetAllVehiclesRequest();
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetAllVehiclesResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (null === $result->return) {
+            return array();
+        } elseif (!is_array($result->return)) {
+            return array($result->return);
+        } else {
+            return $result->return;
+        }
     }
 
     /**
@@ -188,7 +242,8 @@ class Vehicles extends BaseSoapClient
      * @param int $workBeginTime
      * @param int $workEndTime
      *
-     * @return \Zete7\BelTransSat\Models\SetVehicleWorkTimeResponse
+     * @return bool
+     * @throws \Exception
      */
     public function setVehicleWorkTime($vehicleId, $workBeginTime, $workEndTime)
     {
@@ -197,7 +252,13 @@ class Vehicles extends BaseSoapClient
         $parameters->workBeginTime = $workBeginTime;
         $parameters->workEndTime = $workEndTime;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\SetVehicleWorkTimeResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid reponse.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -207,13 +268,16 @@ class Vehicles extends BaseSoapClient
      *
      * @param string $vehicleId
      *
-     * @return \Zete7\BelTransSat\Models\GetVehicleResponse
+     * @return \Zete7\BelTransSat\Models\VehicleModel
      */
     public function getVehicle($vehicleId)
     {
         $parameters = new GetVehicleRequest();
         $parameters->vehicleId = $vehicleId;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetVehicleResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+
+        return $result->vehicle;
     }
 }

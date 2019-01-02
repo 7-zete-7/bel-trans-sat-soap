@@ -34,7 +34,7 @@ class Drivers extends BaseSoapClient
      * Constructor.
      *
      * @param string $wsdl WSDL file
-     * @param array(string=>mixed) $options Options array
+     * @param mixed[] $options Options array
      */
     public function __construct($wsdl, array $options = array())
     {
@@ -45,6 +45,9 @@ class Drivers extends BaseSoapClient
         parent::__construct($wsdl, $options);
     }
 
+    /**
+     * @return string[]
+     */
     public function getClassMap()
     {
         return $this->classMap;
@@ -57,14 +60,21 @@ class Drivers extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\DriverModel $driver
      *
-     * @return \Zete7\BelTransSat\Models\AddDriverResponse
+     * @return bool
+     * @throws \Exception
      */
     public function addDriver(DriverModel $driver)
     {
         $parameters = new AddDriverRequest();
         $parameters->driver = $driver;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\AddDriverResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -74,14 +84,21 @@ class Drivers extends BaseSoapClient
      *
      * @param \Zete7\BelTransSat\Models\DriverModel $driver
      *
-     * @return \Zete7\BelTransSat\Models\UpdateDriverResponse
+     * @return bool
+     * @throws \Exception
      */
     public function updateDriver(DriverModel $driver)
     {
         $parameters = new UpdateDriverRequest();
         $parameters->driver = $driver;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\UpdateDriverResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -91,14 +108,21 @@ class Drivers extends BaseSoapClient
      *
      * @param string $driverId
      *
-     * @return \Zete7\BelTransSat\Models\DeleteDriverResponse
+     * @return bool
+     * @throws \Exception
      */
     public function deleteDriver($driverId)
     {
         $parameters = new DeleteDriverRequest();
         $parameters->driverId = $driverId;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\DeleteDriverResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (!is_bool($result->return)) {
+            throw new \Exception('Invalid response.');
+        }
+
+        return $result->return;
     }
 
     /**
@@ -106,13 +130,21 @@ class Drivers extends BaseSoapClient
      *
      * @api
      *
-     * @return \Zete7\BelTransSat\Models\GetDriversIdsResponse
+     * @return string[]
      */
     public function getDriversIds()
     {
         $parameters = new GetDriversIdsRequest();
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetDriversIdsResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        if (null === $result->driverId) {
+            return array();
+        } elseif (!is_array($result->driverId)) {
+            return array($result->driverId);
+        } else {
+            return $result->driverId;
+        }
     }
 
     /**
@@ -122,13 +154,16 @@ class Drivers extends BaseSoapClient
      *
      * @param string $driverId
      *
-     * @return \Zete7\BelTransSat\Models\GetDriverResponse
+     * @return \Zete7\BelTransSat\Models\DriverModel
      */
     public function getDriver($driverId)
     {
         $parameters = new GetDriverRequest();
         $parameters->driverId = $driverId;
 
-        return $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+        /** @var \Zete7\BelTransSat\Models\GetDriverResponse $result */
+        $result = $this->__soapCall(__FUNCTION__, array('parameters' => $parameters));
+
+        return $result->driver;
     }
 }

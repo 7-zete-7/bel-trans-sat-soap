@@ -16,5 +16,5 @@ class DeleteDriverResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }

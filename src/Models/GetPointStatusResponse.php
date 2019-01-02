@@ -16,5 +16,5 @@ class GetPointStatusResponse
      *
      * @var \Zete7\BelTransSat\Models\PointStatus
      */
-    public $return = null;
+    public $return;
 }

@@ -16,5 +16,5 @@ class AddVehicleResponse
      *
      * @var boolean
      */
-    public $return = null;
+    public $return;
 }
